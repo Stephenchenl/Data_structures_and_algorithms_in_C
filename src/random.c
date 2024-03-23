@@ -1,5 +1,3 @@
-#include <time.h>
-#include <stdlib.h>
 #include "../inc/my_library.h"
 
 /*

@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "../inc/my_library.h"
 
 /*
