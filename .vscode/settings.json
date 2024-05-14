@@ -1,6 +1,6 @@
 {
     "C_Cpp.dimInactiveRegions": true,
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
         "stdlib.h": "c",
         "my_library.h": "c"
