@@ -69,3 +69,14 @@ double stringToFloat(char *digits){
 
     return ret;
 }
+
+uint8_t parse(const char *inst){
+    int i=0;
+    uint8_t num = 0;
+
+    for(i; i<8; i++){
+        num += (inst[i] -'0') * pow(2,(7-i));
+    }
+    
+    return num;
+}

@@ -1,25 +1,36 @@
 #ifndef MY_LIBRARY_H
 #define MY_LIBRARY_H
 
-int* random(int a[],int length); //ç”Ÿæˆ[0,length+1]èŒƒå›´çš„éšæœºæ•°ç»„
-
-void swap_int(int *a,int *b);    //äº¤æ¢ä¸¤ä¸ªæ•´å‹å˜é‡çš„å€¼
-
-void bubble_sort(int arry[],int length);   //å†’æ³¡æ’åº
+//Éú³ÉÎ±Ëæ»úÊı
+int* random(int a[],int length);
 
 /*
-å¿«é€Ÿæ’åº
+ÅÅĞòËã·¨
 */
+//Ã°ÅİÅÅĞò
+void bubble_sort(int arry[],int length);
+//¿ìËÙÅÅĞò
 void quicksort(int arr[], int low, int high);
 int partition(int arr[], int low, int high);
 
-/*
-åœ¨å †ç©ºé—´ä¸­æ“ä½œå­—ç¬¦ä¸²æ•°ç»„
-*/
+
 char** string_array(int num);
 char* str(int str_size);
 void free_arr(char **arr,int size);
 void print_arr(char **arr,int size);
+
+/*
+×Ö·û´®Ïà¹Ø²Ù×÷
+*/
+//¼ÆËã×Ö·û´®³¤¶È
+int stringLength(char *str);
+//±È½Ï×Ö·û´®µÄ´óĞ¡
+int stringCompare(char *str1, char *str2);
+//½«×Ö·û´®×ª»¯³Éµ¥¾«¶È¸¡µãĞÍ
+double stringToFloat(char *digits);
+//½«×Ö·û´®×ª»»³É¶ş½øÖÆ
+uint8_t parse(const char *inst);
+
 
 
 #endif  //MY_LIBRARY_H
