@@ -1,6 +1,13 @@
-#include "../inc/my_library.h"
+#include "../inc/sort.h"
 
 
+/**
+ * @brief   冒泡排序
+ * @param   arry[]：待排序的数组
+ *          length：数组的长度
+ * @return  无返回值
+ * @note
+*/
 void bubble_sort(int arry[],int length){
 
     for(int i = 0; i < length-1; i++){
@@ -14,8 +21,6 @@ void bubble_sort(int arry[],int length){
             }
         }
         if(!t){
-            printf("%d\n",(length-1),(i+1));
-            printf("\n");
             break;
         }
     }
@@ -23,6 +28,14 @@ void bubble_sort(int arry[],int length){
 }
 
 
+/**
+ * @brief   快速排序
+ * @param   arr[]：待排序的数组
+ *          low：
+ *          high：
+ * @return  无返回值
+ * @note
+*/
 void quicksort(int arr[], int low, int high){  
     if (low < high) {  
         int pi = partition(arr, low, high);
@@ -31,7 +44,6 @@ void quicksort(int arr[], int low, int high){
         quicksort(arr, pi + 1, high);
     }  
 }
-
 int partition(int arr[], int low, int high){
     int pivot = arr[high];
     int i = (low - 1);
