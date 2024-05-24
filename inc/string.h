@@ -11,10 +11,3 @@ double stringToFloat(const char *digits);
 uint32_t stringToDecimal(const char *inst);
 
 #endif
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <math.h>
-#include <stdint.h>
