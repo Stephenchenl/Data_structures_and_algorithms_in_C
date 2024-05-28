@@ -1,4 +1,6 @@
-#include "../inc/tool.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 
 /**

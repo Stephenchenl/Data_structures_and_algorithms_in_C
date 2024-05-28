@@ -1,43 +1,76 @@
-#include "../inc/compress.h"
-
+#include <malloc.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * @brief   ÓÎ³Ì±àÂëÑ¹Ëõ
+ * @brief   ÓÎ³Ì±àÂëÑ¹Ëõ--×Ö·û´®°æ
  * @param   *str£º´ýÑ¹Ëõ×Ö·û´®
  * @return  Ñ¹ËõºóµÄ×Ö·û´®
  * @note
-*/
-// void runLengthEncoding(char *str){
-//     char *temp = str;
-//     int len = 0;
-//     while(*temp != '\0'){
-//         len++;
-//     }
+ */
+char *runLengthEncodingInString(char *str)
+{
 
-//     int maxstep = 5;
-//     char *p = (char *)malloc(len * sizeof(char));
-//     if(p == NULL){
-//         perror("malloc error");
+    char *len = str;
+    int strlen = 0;
+    while (*len++ != '\0')
+    {
+        strlen++;
+    }
+
+    char *encoding = (char *)malloc(strlen * sizeof(char));
+    if (encoding == NULL)
+    {
+        perror("malloc error");
+        exit(1);
+    }
+
+    int maxstep = 5;
+    char *run = str;
+    char *temp = encoding;
+    while (*run != '\0')
+    {
+        int count = 1;
+        *temp = *run;
+        while (*run == *temp)
+        {
+            if (*run == *(run + 1))
+            {
+                count++;
+            }
+            run++;
+            if (count == maxstep)
+            {
+                run++;
+                break;
+            }
+        }
+        temp++;
+        *temp = '0' + count;
+        temp++;
+    }
+    *temp = '\0';
+
+    return encoding;
+}
+
+/**
+ * @brief   ÓÎ³Ì±àÂëÑ¹Ëõ--ÎÄ¼þ°æ
+ * @param   *filename£º´ýÑ¹ËõÎÄ¼þ
+ * @return  Ñ¹ËõºóµÄÎÄ¼þ
+ * @note
+ */
+// void runLengthEncodingInFile(const char *filename)
+// {
+
+//     FILE *file = fopen(filename, "r+");
+//     if (file == NULL)
+//     {
+//         perror("fopen");
 //         exit(1);
 //     }
-//     while (*str != '\0'){
-//         int count = 0;
-//         *p = *str;
-//         *p++;
-//         while (1){
-//             if(*str == *(str+1)){
-//                 count++;
-//                 str++;
-//             }
-//             else{
-//                 str++;
-//                 *p = count;
-//                 p++;
-//                 break;
-//             }
-//         }
-//     }
-//     *p = '\0';
-    
 
+//     fseek(file, 0, SEEK_END);
+//     int fileLen = ftell(file);
+//     fseek(file, 0, SEEK_SET);
 // }

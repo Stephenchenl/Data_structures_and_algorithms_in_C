@@ -2,7 +2,10 @@
     "C_Cpp.dimInactiveRegions": true,
     "C_Cpp.errorSquiggles": "disabled",
     "files.associations": {
+        "*.txt": "c",
         "stdlib.h": "c",
-        "my_library.h": "c"
+        "my_library.h": "c",
+        "tool.h": "c",
+        "linklist.h": "c"
     }
 }
