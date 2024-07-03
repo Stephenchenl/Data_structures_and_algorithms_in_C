@@ -6,6 +6,8 @@
         "stdlib.h": "c",
         "my_library.h": "c",
         "tool.h": "c",
-        "linklist.h": "c"
+        "linklist.h": "c",
+        "stdbool.h": "c",
+        "stdio.h": "c"
     }
 }

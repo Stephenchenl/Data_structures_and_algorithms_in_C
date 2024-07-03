@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "../inc/linkList.h"
 
+
 /**
  * @brief   创建带头结点的单向链表
  * @param   无参数
@@ -150,4 +151,26 @@ void releaseLinkList(LinkList *linkList)
         linkList->listNum--;
     }
     free(linkList);
+}
+
+/**
+ * @brief   带头结点的链表倒叙
+ * @param   linklist：链表头节点
+ * @return  
+ * @note
+*/
+void reverseList(LinkList *linkList){
+    //初始化
+    LinkNode *t1 = linkList->head.next;
+    linkList->head.next = NULL;
+    //头插法
+    LinkNode *bak;
+    while (t1)
+    {
+        bak = t1->next;
+        t1->next = linkList->head.next;
+        linkList->head.next = t1;
+        t1 = bak;
+    }
+
 }

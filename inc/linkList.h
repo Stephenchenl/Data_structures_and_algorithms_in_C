@@ -24,5 +24,6 @@ int insertLinkListByPos(LinkList *linkList, unsigned int pos, Element_t data);
 int deleteLinkList(LinkList *linkList, Element_t data);
 void showLinkList(const LinkList *linkList);
 void releaseLinkList(LinkList *linkList);
+void reverseList(LinkList *linkList);
 
 #endif
